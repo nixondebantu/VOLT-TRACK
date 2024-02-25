@@ -1,13 +1,20 @@
-import { Button } from 'flowbite-react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
+import VoltBar from './components/VoltBar';
+import AddDevicePage from './pages/AddDevicePage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
+    <BrowserRouter>
     <>
-    <div>
-      <Button>Click me</Button>
-    </div>
+      <VoltBar/>
+      <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/add-device" element={<AddDevicePage/>}/>
+      </Routes>
     </>
+    </BrowserRouter>
   );
 }
 
